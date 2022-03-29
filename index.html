@@ -7,7 +7,19 @@
 <script src="semantle-graph-listener.js"></script>
 </head>
 <body>
-<div id="semantle-plot"></div>
 <script src="semantle-graph.js"></script>
+<div id="semantle-graph-options">
+  <form>
+  <div id="semantle-graph-options-quantity">
+    <input type="radio" id="quantity-score" name="quantity" value="score" checked>
+    <label for="quantity-score">Score</label>
+    <input type="radio" id="quantity-proximity" name="quantity" value="proximity">
+    <label for="quantity-proximity">Proximity</label>
+  </div>
+  <button type="button">Re-plot</button>
+  </form>
+  <p id="semantle-graph-status"></p>
+</div>
+<div id="semantle-plot"></div>
 </body>
 </html>
