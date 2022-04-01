@@ -43,7 +43,7 @@ function measure_to_date(data, func) {
 }
 
 function moving_measure_value(data) {
-	return data[-1];
+	return data[data.length-1];
 }
 
 function moving_measure_max(data) {
