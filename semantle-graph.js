@@ -9,7 +9,8 @@ function plot(plot_data) {
 	Plotly.newPlot( plot_canvas, [{
 		x: plot_data[0],
 		y: plot_data[1] }],
-		{ margin: { t: 0 } }
+		{ margin: { t: 0 } },
+		{ responsive: true },
 	);
 	var drawn = true;
 }
@@ -18,7 +19,8 @@ function plot_replot(plot_data) {
 	Plotly.newPlot( plot_canvas, [{
 		x: plot_data[0],
 		y: plot_data[1] }],
-		{ margin: { t: 0 } }
+		{ margin: { t: 0 } },
+		{ responsive: true },
 	);
 }
 
