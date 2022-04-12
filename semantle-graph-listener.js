@@ -7,7 +7,8 @@ window.addEventListener("message", (event) => {
 	progress[2] = progress[2].map(x => x * 1);
 	window.localStorage.setItem("progress", JSON.stringify(progress));
 	if (drawn==true) {
-		plot_replot();
+		plot_data = set_plot_data(plot_state);
+		plot_replot(plot_data);
 		plot_status.textContent = "New data received.";
 	}
 });
