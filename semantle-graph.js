@@ -1,4 +1,3 @@
-var progress = JSON.parse(window.localStorage.getItem("progress"));
 var plot_data = new Array();
 var plot_state = {
 	quantity: "score",
@@ -26,9 +25,9 @@ function plot_replot(plot_data) {
 
 function set_plot_data(plot_state) {
 	if (plot_state.quantity=="score") {
-		plot_data[1] = progress[0];
+		plot_data[1] = window.progress[0];
 	} else if (plot_state.quantity=="proximity") {
-		plot_data[1] = progress[2];
+		plot_data[1] = window.progress[2];
 	}
 	if (plot_state.measure=="value") {
 		plot_data[1] = measure_to_date(plot_data[1], moving_measure_value);
@@ -89,6 +88,6 @@ window.addEventListener("load", (event) => {
 		console.log(`Plotting measure ${plot_state.measure}`);
 		console.groupEnd();
 
-		plot_replot(plot_data)
+		plot_replot(plot_data);
 	});
 });

@@ -1,4 +1,5 @@
 var drawn = false;
+var progress = JSON.parse(window.localStorage.getItem("progress"));
 
 window.addEventListener("message", (event) => {
 	let guesses = JSON.parse(event.data);
@@ -6,6 +7,7 @@ window.addEventListener("message", (event) => {
 	var progress = guesses[0].map((col, i) => guesses.map(row => row[i]));
 	progress[2] = progress[2].map(x => x * 1);
 	window.localStorage.setItem("progress", JSON.stringify(progress));
+	window.progress = progress;
 	if (drawn==true) {
 		plot_data = set_plot_data(plot_state);
 		plot_replot(plot_data);
